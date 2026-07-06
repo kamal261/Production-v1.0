@@ -1,0 +1,41 @@
+[35m.env.example[m
+[32m9[m[36m:[mWP_APP_[1;31mPASSWORD[m=xxxxxxxxxxxxxxxxxxxx
+[32m11[m[36m:[mGSC_[1;31mTOKEN[m=
+[32m13[m[36m:[mSERP_[1;31mAPI_KEY[m=
+[32m15[m[36m:[mOPENAI_[1;31mAPI_KEY[m=
+[32m16[m[36m:[mOPENROUTER_[1;31mAPI_KEY[m=
+[32m17[m[36m:[mNARA_[1;31mAPI_KEY[m=
+
+[35mcore/config/env_loader.py[m
+[32m38[m[36m:[m    WP_APP_[1;31mPASSWORD[m = os.getenv(
+[32m39[m[36m:[m        "WP_APP_[1;31mPASSWORD[m",
+[32m43[m[36m:[m    GSC_[1;31mTOKEN[m = os.getenv(
+[32m44[m[36m:[m        "GSC_[1;31mTOKEN[m",
+[32m48[m[36m:[m    SERP_[1;31mAPI_KEY[m = os.getenv(
+[32m49[m[36m:[m        "SERP_[1;31mAPI_KEY[m",
+[32m53[m[36m:[m    OPENAI_[1;31mAPI_KEY[m = os.getenv(
+[32m54[m[36m:[m        "OPENAI_[1;31mAPI_KEY[m",
+[32m58[m[36m:[m    OPENROUTER_[1;31mAPI_KEY[m = os.getenv(
+[32m59[m[36m:[m        "OPENROUTER_[1;31mAPI_KEY[m",
+[32m63[m[36m:[m    NARA_[1;31mAPI_KEY[m = os.getenv(
+[32m64[m[36m:[m        "NARA_[1;31mAPI_KEY[m",
+
+[35mcore/seo_pipeline.py[m
+[32m25[m[36m:[m        self.gsc = GSCClient(Env.GSC_[1;31mTOKEN[m, Env.SITE_URL)
+[32m26[m[36m:[m        self.serp = SERPAPIClient(Env.SERP_[1;31mAPI_KEY[m)
+
+[35mproviders/openai_provider.py[m
+[32m15[m[36m:[m            api_key=Env.OPENAI_[1;31mAPI_KEY[m
+
+[35mproviders/openrouter_provider.py[m
+[32m22[m[36m:[m                "Authorization": f"Bearer {Env.OPENROUTER_[1;31mAPI_KEY[m}",
+
+[35mproviders/provider_selector.py[m
+[32m14[m[36m:[m        if Env.OPENAI_[1;31mAPI_KEY[m:
+[32m17[m[36m:[m        if Env.OPENROUTER_[1;31mAPI_KEY[m:
+
+[35mserp/engine.py[m
+[32m10[m[36m:[m        self.api_key = Env.SERP_[1;31mAPI_KEY[m
+
+[35mwordpress/auth.py[m
+[32m9[m[36m:[m        token = f"{Env.WP_USERNAME}:{Env.WP_APP_[1;31mPASSWORD[m}"
