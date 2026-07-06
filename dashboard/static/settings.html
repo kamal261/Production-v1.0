@@ -1,0 +1,25 @@
+<h1>SEO Config Panel</h1>
+
+<input id="key" placeholder="key">
+<input id="value" placeholder="value">
+
+<button onclick="update()">Update</button>
+
+<pre id="output"></pre>
+
+<script>
+
+async function update(){
+
+    const key = document.getElementById("key").value;
+    const value = document.getElementById("value").value;
+
+    const res = await fetch("/config/update?key="+key+"&value="+value, {
+        method: "POST"
+    });
+
+    document.getElementById("output").innerText =
+        JSON.stringify(await res.json(), null, 2);
+}
+
+</script>

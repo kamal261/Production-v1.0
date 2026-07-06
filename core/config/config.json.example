@@ -1,0 +1,15 @@
+{
+    "project_name": "SEO_AI_PLATFORM",
+    "mode": "safe",
+    "site_url": "",
+    "wp_site": "",
+    "wp_username": "",
+    "wp_app_password": "",
+    "gsc_token": "",
+    "serp_api_key": "",
+    "openai_api_key": "",
+    "openrouter_api_key": "",
+    "nara_api_key": "",
+    "ollama_url": "http://localhost:11434",
+    "default_model": "gpt-4.1"
+}

@@ -1,0 +1,1 @@
+from competitor.engine import CompetitorEngine

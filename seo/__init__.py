@@ -1,0 +1,1 @@
+from seo.analyzer import SEOAnalyzer
