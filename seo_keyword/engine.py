@@ -1,14 +1,11 @@
+"""
+Temporary shim for seo_keyword.engine to satisfy imports in tests.
+Replace with the real implementation when available.
+"""
 class KeywordEngine:
+    def __init__(self, *args, **kwargs):
+        raise RuntimeError(
+            "KeywordEngine is a stub placeholder. Replace seo_keyword/engine.py with the real implementation."
+        )
 
-    def __init__(self):
-
-        self.keywords = []
-
-    def add(self, keyword):
-
-        if keyword not in self.keywords:
-            self.keywords.append(keyword)
-
-    def all(self):
-
-        return self.keywords
+__all__ = ["KeywordEngine"]
