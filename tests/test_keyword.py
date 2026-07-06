@@ -1,4 +1,4 @@
-from keyword.engine import KeywordEngine
+from seo_keyword.engine import KeywordEngine
 
 
 def test_keywords():
